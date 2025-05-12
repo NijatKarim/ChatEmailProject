@@ -1,0 +1,56 @@
+﻿@model ChatEmailProject.Entities.Message
+@{
+    ViewData["Title"] = "MessageDetail";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<body>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                                               
+                            <div class="read-content">
+                                <div class="media pt-5">
+                                    <div class="media-body">
+                                        <h5 class="m-b-3">From: @Model.SenderEmail</h5>
+                                        <p class="m-b-2">@(((DateTime)Model.SendDate).ToString("dd-MMM-yyyy"))</p>
+                                    </div>
+
+                                </div>
+                                <hr>
+                                <div class="media mb-4 mt-1">
+                                    <div class="media-body">
+                                    <span class="float-right">@(((DateTime)Model.SendDate).ToString("HH-mm"))</span>
+                                        <h4 class="m-0 text-primary">@Model.Subject</h4><small class="text-muted">To: @Model.RecieverEmail</small>
+                                    </div>
+                                </div>
+                          
+                                <p>
+                                   @Model.MessageDetail
+                                </p>
+                             
+                                <hr>
+                       
+                                
+                            </div>
+                          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

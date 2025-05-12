@@ -1,0 +1,52 @@
+﻿@model List<ChatEmailProject.Entities.Message>
+@{
+    ViewData["Title"] = "Inbox";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="email-left-box">
+                            <a href="/Message/CreateMessage/" class="btn btn-primary btn-block">Compose</a>
+                        </div>
+                           <br /><br /><br />
+                            <div class="email-list m-t-15">
+                                @foreach(var item in Model){
+                                <div class="message">
+                                    <a href="/Message/MessageDetail/@item.MessageID">
+                                        <div class="col-mail col-mail-1">
+                                            <div class="email-checkbox">
+                                                <input type="checkbox" id="chk2">
+                                                <label class="toggle" for="chk2"></label>
+                                            </div><span class="star-toggle ti-star"></span>
+                                        </div>
+                                        <div class="col-mail col-mail-2">
+                                            <div class="subject">@item.SenderEmail</div>
+                                            <div class="date">@(((DateTime)item.SendDate).ToString("dd-MMM-yy"))</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                            </div>
+                            <!-- panel -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

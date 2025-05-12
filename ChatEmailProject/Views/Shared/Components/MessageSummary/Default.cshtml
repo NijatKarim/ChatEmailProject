@@ -1,0 +1,14 @@
+﻿@model (int Inbox, int Sent)
+
+<li>
+    <a href="/Message/Inbox/" aria-expanded="false">
+        <i class="icon-badge menu-icon"></i>
+        <span class="nav-text">Inbox <span class="badge badge-info">@Model.Inbox</span></span>
+    </a>
+</li>
+<li>
+    <a href="/Message/SendBox/" aria-expanded="false">
+        <i class="icon-badge menu-icon"></i>
+        <span class="nav-text">Sent <span class="badge badge-primary">@Model.Sent</span></span>
+    </a>
+</li>
