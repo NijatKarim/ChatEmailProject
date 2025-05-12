@@ -112,9 +112,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" aria-expanded="false">
+                        <a href="#" onclick="document.getElementById('logoutForm').submit(); return false;" aria-expanded="false">
                             <i class="icon-badge menu-icon"></i><span class="nav-text">Exit</span>
                         </a>
+                        <form id="logoutForm" asp-controller="Login" asp-action="Logout" method="post" style="display:none;">
+                            @Html.AntiForgeryToken()
+                        </form>
                     </li>
                 </ul>
             </div>
